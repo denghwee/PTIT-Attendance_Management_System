@@ -23,7 +23,7 @@ def manually_fill():
     global sb
     sb = tk.Tk()
     sb.iconbitmap("AMS.ico")
-    sb.title("Enter subject name...")
+    sb.title("Điền tên môn học...")
     sb.geometry("580x320")
     sb.configure(background="snow")
 
@@ -39,7 +39,7 @@ def manually_fill():
         ec.configure(background="snow")
         tk.Label(
             ec,
-            text="Please enter subject name!!!",
+            text="Vui lòng điền tên môn học!!!",
             fg="red",
             bg="white",
             font=("times", 16, " bold "),
@@ -84,7 +84,7 @@ def manually_fill():
                 errsc2.configure(background="snow")
                 tk.Label(
                     errsc2,
-                    text="Please enter Student & Enrollment!!!",
+                    text="Vui long điền MSV!!!",
                     fg="red",
                     bg="white",
                     font=("times", 16, " bold "),
@@ -109,7 +109,7 @@ def manually_fill():
 
             ENR = tk.Label(
                 MFW,
-                text="Enter Enrollment",
+                text="Điền MSV",
                 width=15,
                 height=2,
                 fg="white",
@@ -120,7 +120,7 @@ def manually_fill():
 
             STU_NAME = tk.Label(
                 MFW,
-                text="Enter Student name",
+                text="Điền họ tên SV",
                 width=15,
                 height=2,
                 fg="white",
@@ -195,7 +195,7 @@ def manually_fill():
                     + ".csv"
                 )
                 df.to_csv(csv_name)
-                O = "CSV created Successfully"
+                O = "CSV được khởi tạo thành công"
                 Notifi.configure(
                     text=O,
                     bg="Green",
@@ -235,7 +235,7 @@ def manually_fill():
 
             Notifi = tk.Label(
                 MFW,
-                text="CSV created Successfully",
+                text="CSV được khởi tạo thành công",
                 bg="Green",
                 fg="white",
                 width=33,
@@ -284,7 +284,7 @@ def manually_fill():
 
             MAKE_CSV = tk.Button(
                 MFW,
-                text="Convert to CSV",
+                text="Chuyển thành file CSV",
                 command=create_csv,
                 fg="black",
                 bg="red",
@@ -319,7 +319,7 @@ def manually_fill():
 
     SUB = tk.Label(
         sb,
-        text="Enter Subject",
+        text="Điền môn học",
         width=15,
         height=2,
         fg="white",

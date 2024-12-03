@@ -67,7 +67,7 @@ def subjectChoose(text_to_speech):
                             global aa
                             global date
                             global timeStamp
-                            # Subject = tx.get()
+                            Subject = tx.get()
                             ts = time.time()
                             date = datetime.datetime.fromtimestamp(ts).strftime(
                                 "%Y-%m-%d"
@@ -132,7 +132,7 @@ def subjectChoose(text_to_speech):
                 print(attendance)
                 attendance.to_csv(fileName, index=False)
 
-                m = "Attendance Filled Successfully of " + Subject
+                m = "Hoàn thành điểm danh của môn " + Subject
                 Notifica.configure(
                     text=m,
                     bg="#24293E",
@@ -140,11 +140,11 @@ def subjectChoose(text_to_speech):
                     width=33,
                     relief=RIDGE,
                     bd=5,
-                    font=("times", 15, "bold"),
+                    font=("Be Vietnam Pro Bold", 15, "bold"),
                 )
                 text_to_speech(m)
 
-                Notifica.place(x=20, y=250)
+                Notifica.place(x=50, y=350)
 
                 cam.release()
                 cv2.destroyAllWindows()
@@ -168,7 +168,7 @@ def subjectChoose(text_to_speech):
                                 width=10,
                                 height=1,
                                 fg="#F4F5FC",
-                                font=("times", 15, " bold "),
+                                font=("Be Vietnam Pro Bold", 15, " bold "),
                                 bg="#24293E",
                                 text=row,
                                 relief=tkinter.RIDGE,
@@ -180,7 +180,7 @@ def subjectChoose(text_to_speech):
                 print(attendance)
             except Exception as e:
                 print(f"Error occurred: {e}")
-                f = "No Face found for attendance"
+                f = "Không có khuôn mặt nào trong khung hình"
                 text_to_speech(f)
 
     ###windo is frame for subject chooser
@@ -227,7 +227,7 @@ def subjectChoose(text_to_speech):
             folder_path = f"Attendance/{sub}"
             csv_files = glob.glob(f"{folder_path}/*.csv")
             if not csv_files:
-                t = f"No attendance files found for {sub}!"
+                t = f"Không có file tồn tại!"
                 text_to_speech(t)
             else:
                 latest_file = max(csv_files, key=os.path.getctime)

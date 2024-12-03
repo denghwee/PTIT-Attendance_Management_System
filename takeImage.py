@@ -10,13 +10,13 @@ import time
 # take Image of user
 def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,text_to_speech):
     if (l1 == "") and (l2==""):
-        t='Please Enter the your Enrollment Number and Name.'
+        t='Vui lòng điền mã sinh viên và họ tên.'
         text_to_speech(t)
     elif l1=='':
-        t='Please Enter the your Enrollment Number.'
+        t='Vui lòng điền mã sinh viên.'
         text_to_speech(t)
     elif l2 == "":
-        t='Please Enter the your Name.'
+        t='Vui lòng điền tên.'
         text_to_speech(t)
     else:
         try:
@@ -60,9 +60,9 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
                 writer = csv.writer(csvFile, delimiter=",")
                 writer.writerow(row)
                 csvFile.close()
-            res = "Images Saved for ER No:" + Enrollment + " Name:" + Name
+            res = "Hình ảnh đã được lưu trữ cho MSV:" + Enrollment + " Họ tên:" + Name
             message.configure(text=res)
             text_to_speech(res)
         except FileExistsError as F:
-            F = "Student Data already exists"
+            F = "Dữ liệu của sinh viên đã tồn tại"
             text_to_speech(F)
